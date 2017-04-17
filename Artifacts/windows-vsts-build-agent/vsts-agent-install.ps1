@@ -127,7 +127,7 @@ if (![System.IO.File]::Exists($agentExePath))
 # Set the current directory to the agent dedicated one previously created.
 Push-Location -Path $agentInstallationPath
 # The actual install of the agent. Using --runasservice, and some other values that could be turned into paramenters if needed.
-$agentConfigArgs = "--unattended", "--url", $serverUrl, "--auth", "PAT", "--token", $vstsUserPassword, "--pool", $poolname, "--agent", $agentName, "--runasservice", "--windowslogonaccount", $windowsLogonAccount
+$agentConfigArgs = "--unattended", "--url", $serverUrl, "--auth", "PAT", "--token", $vstsUserPassword, "--pool", $poolname, "--agent", $agentName, "--windowslogonaccount", $windowsLogonAccount
 if ($windowsLogonPassword -ne "")
 {
     $agentConfigArgs += "--windowslogonpassword", $windowsLogonPassword
